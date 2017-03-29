@@ -19,3 +19,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# ignore other files
+config.js
+stream-salience-key.json
