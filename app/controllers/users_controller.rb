@@ -1,11 +1,21 @@
 class UsersController < ActionController::Base
   protect_from_forgery with: :exception
 
-  def show
-    user_id = params[:twitter_handle]
-    user_obj = $client.user('realDonaldTrump')
-    
 
+
+  def get_tweet_text_block
+    user_name = params[:twitter_handle]
+    text_block = combine_tweets($client.user_timeline(user_name))
+    json_ples = {:tweet_text => text_block}
+    render json_ples.to_json
+  end
+
+  private
+
+  def combine_tweets(tweet_arr)
+    combined_tweet_string = []
+    tweet_arr.each { |t| combined_tweet_string.push(t.text) }
+    return combined_tweet_string.join(" ")
   end
 
 end
