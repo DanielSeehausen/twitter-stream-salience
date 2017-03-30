@@ -7,7 +7,8 @@
 }
 
 #results {
+  font-size: 1.5em;
   margin-top: 3em;
-  visibility: hidden;
+  visibility: visible;
   text-align: center;
 }
