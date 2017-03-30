@@ -26,7 +26,6 @@ class GoogleApi {
     }).then(function(data) {
       AnalyzedText.sentiment = data.documentSentiment.score
       AnalyzedText.magnitude = data.documentSentiment.magnitude
-      AnalyzedText.twitter_handle = "depaolif"
       GoogleApiController.renderSentiment(AnalyzedText.sentiment,AnalyzedText.magnitude)
     })
   }

@@ -74,6 +74,7 @@ class AnalyzedText {
   }
 
   static getSentimentPhrase() {
+    debugger
     switch (this.getColor()) {
       case "blue":
         return this.twitter_handle + " is doing great."
