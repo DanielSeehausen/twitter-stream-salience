@@ -56,15 +56,15 @@ class AnalyzedText {
     //   resetView()
 
     switch (true) {
-      case (this.sentiment > 0.8):
+      case (this.sentiment > 0.7):
         return "blue"
       case (this.sentiment > 0.3):
         return "green"
       case (this.sentiment > 0):
         return "lawngreen"
-      case (this.sentiment > -0.8):
-        return "orange"
       case (this.sentiment > -0.3):
+        return "orange"
+      case (this.sentiment > -0.7):
         return "peru"
       case (this.sentiment >= -1):
         return "red"
@@ -74,7 +74,6 @@ class AnalyzedText {
   }
 
   static getSentimentPhrase() {
-    debugger
     switch (this.getColor()) {
       case "blue":
         return this.twitter_handle + " is doing great."
@@ -82,9 +81,9 @@ class AnalyzedText {
         return this.twitter_handle + " is doing pretty good."
       case "lawngreen":
         return this.twitter_handle + " is doing ok."
-      case "yellow":
-        return this.twitter_handle + " isn't doing that great."
       case "orange":
+        return this.twitter_handle + " isn't doing that great."
+      case "peru":
         return this.twitter_handle + " is having a hard time."
       case "red":
         return this.twitter_handle + " is miserable."
